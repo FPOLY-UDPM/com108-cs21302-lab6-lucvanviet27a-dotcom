@@ -1,7 +1,7 @@
 /******************************************************************************
- * Họ và tên: [ĐIỀN TÊN TẠI ĐÂY]
- * MSSV:      [ĐIỀN MSSV TẠI ĐÂY]
- * Lớp:       [ĐIỀN LỚP TẠI ĐÂY]
+ * Họ và tên: [LỤC VĂN VIỆT]
+ * MSSV:      [PS49691]
+ * Lớp:       [COM108-CS21302]
  *****************************************************************************/
 
 //  BÀI 1: TÍNH TRUNG BÌNH TỔNG CÁC SỐ CHIA HẾT CHO 3 TRONG MẢNG 
@@ -10,4 +10,39 @@
 
 
 // VIẾT CODE Ở ĐÂY
+#include <stdio.h>
 
+int main() {
+    int n;
+    int a[100];
+    int tong = 0, dem = 0;
+    float trungBinh;
+
+    
+    printf("Nhap so phan tu n: ");
+    scanf("%d", &n);
+
+
+    for(int i = 0; i < n; i++) {
+        printf("Nhap a[%d]: ", i);
+        scanf("%d", &a[i]);
+    }
+
+
+    for(int i = 0; i < n; i++) {
+        if(a[i] % 3 == 0) {
+            tong += a[i];
+            dem++;
+        }
+    }
+
+
+    if(dem > 0) {
+        trungBinh = (float)tong / dem;
+        printf("Trung binh cac so chia het cho 3 la: %.2f", trungBinh);
+    } else {
+        printf("Khong co so nao chia het cho 3 trong mang");
+    }
+
+    return 0;
+}
